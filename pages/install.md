@@ -60,7 +60,7 @@ sudo mv elasticsearch-6.6.0 /usr/local
 cd /usr/local
 sudo ln -s elasticsearch-6.6.0 elasticsearch
 cd elasticsearch
-bin/elasticsearch -f
+bin/elasticsearch
 ```
 
 Pronto. Agora é só seguir o mesmo caminho de teste e execute o seguinte comando:
