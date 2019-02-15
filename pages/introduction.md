@@ -12,4 +12,4 @@ Sendo assim, todos os passos descritos neste repositório tendem a demonstrar a 
 
 Não se preocupe se em alguns momentos aparecerem termos confusos que ainda não foram explicados, pois ao longo do treinamento eles se tornarão claros para você :)
 
-Anterior: [Elastic Stack para Iniciantes](/README.md) | Próximo: [Elasticsearch](/pages/elasticsearch.md)
+Anterior: [Elastic Stack para Iniciantes](https://github.com/vinicius3w/elastic-stack) | Próximo: [Elasticsearch](/pages/elasticsearch.md)
