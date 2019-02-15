@@ -44,4 +44,4 @@ __QUERY_STRING__ -> A pesquisa propriamente dita.
 
 __BODY__ -> O documento JSON que você quer enviar ou utilizar como parâmetro de pesquisa.
 
-Próximo: [Index, Type e Document ?](/pages/index_type_document.md)
+Anterior: [Instalação](/pages/install.md) | Próximo: [Index, Type e Document ?](/pages/index_type_document.md)
