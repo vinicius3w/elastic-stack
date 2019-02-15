@@ -47,4 +47,44 @@ Se você recebeu um retorno parecido com esse, quer dizer que tudo está funcion
 }
 ```
 
+### Instalando no ambiante Mac OS
+
+Existem algumas formas de instalar a Elasticsearch Stack em um ambiente Dev Mac OS. Pessoalmente, não acho que você precise usar o [Homebrew](https://brew.sh/) ou qualquer ferramenta de gerenciamento de pacotes para instalar o Elasticsearch. Ele, e os demais componentes da Stack, são simples o suficiente para baixar o arquivo [tar.gz](https://www.elastic.co/downloads/elasticsearch), descompactar (untar), movê-lo para ```/usr/local``` e depois executar ```sudo ln -s ...```. Mais sobre o comando [`ln`](https://www.computerhope.com/unix/uln.htm).
+
+No meu caso, enquanto estava seguindo este tutorial, utilizei a versão **6.6.0** dos componentes da stack.
+
+```bash
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.6.0.tar.gz
+tar zxvf elasticsearch-6.6.0.tar.gz
+sudo mv elasticsearch-6.6.0 /usr/local
+cd /usr/local
+sudo ln -s elasticsearch-6.6.0 elasticsearch
+cd elasticsearch
+bin/elasticsearch -f
+```
+
+Pronto. Agora é só seguir o mesmo caminho de teste e execute o seguinte comando:
+
+```
+curl -XGET http://localhost:9200/
+```
+
+Se você recebeu um retorno parecido com esse, quer dizer que tudo está funcionando como deveria:
+
+```
+{
+  "name" : "XJWzjDi",                         # Nome da sua instância de Elasticsearch (personalizável).
+  "cluster_name" : "elasticsearch",           # Nome do cluster que a nossa instância pertence (personalizável).
+  "cluster_uuid" : "ZH9GequzQX-oobJVGPlbjg",  # Identificador universal do seu cluster (como um CPF do seu cluster).
+  "version" : {                               # Dentro desta "tag" temos todas as informações sobre versão de produto.
+  "number" : "5.6.5",                         # Versão do Elasticsearch.
+  "build_hash" : "57e20f3",                   # "ID" da geração deste pacote de Elasticsearch.
+  "build_date" : "2017-09-23T13:16:45.703Z",  # Data de geração deste pacote.
+  "build_snapshot" : false,                   # Irrelevante (é irrelevante sim, para de reclamar).
+  "lucene_version" : "6.6.1"                  # Versão do Lucene utilizada.
+},
+  "tagline" : "You Know, for Search"          # Uma resposta amigável do Elasticsearch.
+}
+```
+
 Próximo: [REST e JSON](/pages/rest_json.md)
