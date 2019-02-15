@@ -32,4 +32,4 @@ Outra forma de se usar o Elasticsearch é como uma solução NoSQL. Como ele esc
 
 Enfim, chega de conversa. Vamos ver como isso funciona na prática!
 
-Próximo: [Instalação](/pages/install.md)
+Anterior: [Introdução](/pages/introduction.md) | Próximo: [Instalação](/pages/install.md)
