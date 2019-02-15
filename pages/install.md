@@ -73,17 +73,21 @@ Se você recebeu um retorno parecido com esse, quer dizer que tudo está funcion
 
 ```
 {
-  "name" : "XJWzjDi",                         # Nome da sua instância de Elasticsearch (personalizável).
-  "cluster_name" : "elasticsearch",           # Nome do cluster que a nossa instância pertence (personalizável).
-  "cluster_uuid" : "ZH9GequzQX-oobJVGPlbjg",  # Identificador universal do seu cluster (como um CPF do seu cluster).
-  "version" : {                               # Dentro desta "tag" temos todas as informações sobre versão de produto.
-  "number" : "5.6.5",                         # Versão do Elasticsearch.
-  "build_hash" : "57e20f3",                   # "ID" da geração deste pacote de Elasticsearch.
-  "build_date" : "2017-09-23T13:16:45.703Z",  # Data de geração deste pacote.
-  "build_snapshot" : false,                   # Irrelevante (é irrelevante sim, para de reclamar).
-  "lucene_version" : "6.6.1"                  # Versão do Lucene utilizada.
-},
-  "tagline" : "You Know, for Search"          # Uma resposta amigável do Elasticsearch.
+  "name" : "_3XJpNS",                               # Nome da sua instância de Elasticsearch (personalizável).
+  "cluster_name" : "elasticsearch",                 # Nome do cluster que a nossa instância pertence (personalizável).
+  "cluster_uuid" : "9qOd-HhzThiv4rrNLoj1gg",        # Identificador universal do seu cluster (como um CPF do seu cluster).
+  "version" : {                                     # Dentro desta "tag" temos todas as informações sobre versão de produto.
+    "number" : "6.6.0",                             # Versão do Elasticsearch.
+    "build_flavor" : "default",
+    "build_type" : "tar",
+    "build_hash" : "a9861f4",                       # "ID" da geração deste pacote de Elasticsearch.
+    "build_date" : "2019-01-24T11:27:09.439740Z",   # Data de geração deste pacote.
+    "build_snapshot" : false,                       # Irrelevante (é irrelevante sim, para de reclamar).
+    "lucene_version" : "7.6.0",                     # Versão do Lucene utilizada.
+    "minimum_wire_compatibility_version" : "5.6.0",
+    "minimum_index_compatibility_version" : "5.0.0"
+  },
+  "tagline" : "You Know, for Search"                # Uma resposta amigável do Elasticsearch.
 }
 ```
 
