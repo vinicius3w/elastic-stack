@@ -20,4 +20,4 @@ Tenha bastante cuidado ao apagar um dado, pois caso você esqueça de passar o "
 
 Caso queira contratar o funcionário "João Silva" execute a inserção que [fizemos anteriormente](/pages/index_type_document.md).
 
-Próximo: [Atualizando](/pages/updating.md)
+Anterior: [Entendendo melhor os contextos](/pages/contexts.md) | Próximo: [Atualizando](/pages/updating.md)
