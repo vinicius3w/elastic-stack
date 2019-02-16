@@ -39,4 +39,4 @@ curl -XGET http://localhost:9200/mycompany/funcionarios/_search?pretty
 
 Com o comando acima, chamamos a API padrão de buscas do Elasticsearch **_search** (o parâmetro __?pretty__ é opcional e só serve para formatar a resposta em JSON). Como não passamos nenhum parâmetro, a API sempre nos retorna os 10 primeiros resultados encontrados, que neste caso nos trouxe apenas o João (_we're hiring_). Sinta-se livre para criar e consultar mais funcionários para exercitar a sintáxe :) .
 
-Próximo: [Tipos e Formas de Pesquisa](/pages/types_forms.md)
+Anterior: [REST e JSON](/pages/rest_json.md) | Próximo: [Tipos e Formas de Pesquisa](/pages/types_forms.md)
