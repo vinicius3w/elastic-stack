@@ -1,11 +1,13 @@
 ## Estruturada
 
+> Artigo atualizado para a versão 6.0+ do Elasticsearch por __[Vinicius Garcia](https://github.com/vinicius3w)__
+
 Uma pesquisa estruturada diz respeito à pesquisas que possuem algum tipo de parametrização/regra envolvida. Para este exemplo, vamos usar o script [funcs.sh](/scripts/funcs.sh) para gerar mais dados no nosso _esquecido_ índice "mycompany".
 
 Após executar o script, faça a pesquisa estruturada abaixo. Tente interpretá-la juntamente com o seu resultado antes de ler a explicação, ok ?
 
 ```
-curl -XGET http://localhost:9200/mycompany/_search\?pretty -d '
+curl -XGET http://localhost:9200/mycompany/_search\?pretty -H 'Content-Type: application/json' -d '
 {
   "query": {
     "bool": {
@@ -46,4 +48,4 @@ _"Elasticsearch, quais são os funcionários com mais de 30 anos que tem Silva n
 
 A medida que as pesquisas se tornam maiores e mais específicas, mais campos e parâmetros são encadeados para satisfazer as condições da busca. Existem diversos argumentos disponíveis para a refinação de queries que são facilmente encontrados na documentação da [Elastic](https://www.elastic.co/guide/index.html). Alguns serão abordados mais a frente, após aprendermos o básico sobre os tipos de busca.
 
-Próximo: [Analítica](/pages/analytics.md)
+Anterior: [Full-text](/pages/full-text.md) | Próximo: [Analítica](/pages/analytics.md)
