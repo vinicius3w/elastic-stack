@@ -47,7 +47,9 @@ Se você recebeu um retorno parecido com esse, quer dizer que tudo está funcion
 }
 ```
 
-### Instalando no ambiante Mac OS
+### Instalando no ambiente Mac OS
+
+> by __[Vinicius Garcia](https://github.com/vinicius3w)__
 
 Existem algumas formas de instalar a Elasticsearch Stack em um ambiente Dev Mac OS. Pessoalmente, não acho que você precise usar o [Homebrew](https://brew.sh/) ou qualquer ferramenta de gerenciamento de pacotes para instalar o Elasticsearch. Ele, e os demais componentes da Stack, são simples o suficiente para baixar o arquivo [tar.gz](https://www.elastic.co/downloads/elasticsearch), descompactar (untar), movê-lo para ```/usr/local``` e depois executar ```sudo ln -s ...```. Mais sobre o comando [`ln`](https://www.computerhope.com/unix/uln.htm).
 
