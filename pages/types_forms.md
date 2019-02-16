@@ -69,4 +69,4 @@ Inicialmente pode parecer estranho ou até um pouco frustrante ter que decifrar 
 
 Agora vamos aos três tipos básicos de pesquisa...
 
-Próximo: [Full-text](/pages/full-text.md)
+Anterior: [Index, Type e Document ?](/pages/index_type_document.md) | Próximo: [Full-text](/pages/full-text.md)
