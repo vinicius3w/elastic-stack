@@ -1,6 +1,8 @@
 ## Tudo muito fácil. O que mais eu posso fazer ?
 
-Agora que entendemos sobre as formas e os tipos de pesquisa de forma básica, vamos aprender mais alguns comandos e funcionalidades utilizando as APIs do Elasticsearch, antes de partirmos para o Logstash e o Kibana.
+> Artigo atualizado para a versão 6.0+ do Elasticsearch por __[Vinicius Garcia](https://github.com/vinicius3w)__
+
+Agora que entendemos sobre as formas e os tipos de pesquisa de maneira básica, vamos aprender mais alguns comandos e funcionalidades utilizando as APIs do Elasticsearch, antes de partirmos para o Logstash e o Kibana.
 
 #### Shutdown
 
@@ -20,4 +22,4 @@ $ ps -ef | grep -i elasticsearch | grep -v grep | awk '{print $2}'
 $ kill 22223
 ```
 
-Próximo: [Contagem de Documentos](/pages/counting.md)
+Anterior: [Analítica](/pages/analytics.md) | Próximo: [Contagem de Documentos](/pages/counting.md)
