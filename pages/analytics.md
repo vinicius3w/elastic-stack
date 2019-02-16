@@ -1,9 +1,11 @@
 ## Analítica
 
+> Artigo atualizado para a versão 6.0+ do Elasticsearch por __[Vinicius Garcia](https://github.com/vinicius3w)__
+
 Finalizando os tipos de pesquisa existentes, temos a pesquisa analítica. O Elasticsearch possui uma funcionalidade chamada _aggregations_ que permite a geração de análises sofisticadas sobre os seus dados (se parece com o GROUP BY do SQL, só que bem mais poderoso). Vamos pesquisar quais são os interesses mais populares entre nossos funcionários. Mas antes, precisamos habilitar uma estrutura chamada __fielddata__ em nosso Elasticsearch que vem desabilitada por padrão:
 
 ```
-curl -XPUT http://localhost:9200/mycompany/_mapping/funcionarios -d '
+curl -XPUT http://localhost:9200/mycompany/_mapping/funcionarios -H 'Content-Type: application/json' -d '
 {
   "properties": {
     "interesses": {
@@ -19,7 +21,7 @@ Esta feature vem desabilitada por conta do consumo de memória que uma pesquisa 
 Agora que habilitamos o fielddata, vamos fazer nossa pesquisa analítica:
 
 ```
-curl -XGET http://localhost:9200/mycompany/funcionarios/_search?pretty -d '
+curl -XGET http://localhost:9200/mycompany/funcionarios/_search?pretty -H 'Content-Type: application/json' -d '
 {
 "query" : {
     "match_all" : {}
@@ -81,8 +83,8 @@ Dentro de **"maiores_interesses"** temos a separação dos resultados por **"buc
 | Games | 1|
 | Musculação | 1|
 
-Ou seja, com uma simples pesquisa conseguimos encontrar fatores em comum sobre nossos funcionários e agora sabemos quais sãos os maiores interesses dentro de nossa empresa. Possuímos poucos dados para brincar até o momento, mas imagine em uma empresa com 5.000 funcionários. Será que conseguimos tirar algum proveito disso ? Será que conseguimos correlacionar nossos dados para encontrar benefícios que possam ser mais úteis para nossos colaboradores ? Veja possuímos poucos dados, mas já sabemos que a maioria dos nossos funcionários gostam de "música" e "esportes".
+Ou seja, com uma simples pesquisa conseguimos encontrar fatores em comum sobre nossos funcionários e agora sabemos quais sãos os maiores interesses dentro de nossa empresa. Possuímos poucos dados para brincar até o momento, mas imagine em uma empresa com 5.000 funcionários. Será que conseguimos tirar algum proveito disso? Será que conseguimos correlacionar nossos dados para encontrar benefícios que possam ser mais úteis para nossos colaboradores? Veja possuímos poucos dados, mas já sabemos que a maioria dos nossos funcionários gostam de "música" e "esportes".
 
-Apesar de abordarmos tarefas simples com os tipos de pesquisa do Elasticsearch, a quantidade de operações, agregações e filtros possíveis são quase infinitos ! Tudo vai depender da quantidade de dados que você possui e a quantidade de regras que você quer especificar em suas buscas.
+Apesar de abordarmos tarefas simples com os tipos de pesquisa do Elasticsearch, a quantidade de operações, agregações e filtros possíveis são quase infinitos! Tudo vai depender da quantidade de dados que você possui e a quantidade de regras que você quer especificar em suas buscas.
 
-Próximo: [Shutdown](/pages/shutdown.md)
+Anterior: [Estruturada](/pages/structured.md) | Próximo: [Shutdown](/pages/shutdown.md)
