@@ -2,7 +2,34 @@
 
 Agora, vamos entender os três _tipos_ de pesquisa que existem no Elasticsearch (full-text, estruturada e analítica) e as duas _formas_ básicas de construção de pesquisas (query-string e query DSL).
 
-Para este exemplo, utilize o script [tweets.sh](/scripts/tweets.sh) (_já atualizado para incluir a verificação estrita do tipo de conteúdo introduzida a partir da versão 6.0 do Elasticsearch_) para criar o index _twitter_ que irá conter diversos tweets de usuários diferentes. Após a execução do script, visualize os índices existentes no seu Elasticsearch utilizando a API **_cat**:
+Para este exemplo, utilize o script [tweets.sh](/scripts/tweets.sh) (_já atualizado para incluir a verificação estrita do tipo de conteúdo introduzida a partir da versão 6.0 do Elasticsearch_) para criar o index _twitter_ que irá conter diversos tweets de usuários diferentes. 
+
+> Você provavelmente está executando o Elasticsearch versão 6 (ou posterior) e, a partir dessa versão, o ES não permite que você crie mais de um tipo em qualquer índice.
+
+> Você precisa armazenar cada tipo de documento em um índice dedicado, por exemplo,
+
+```
+PUT /business/building/217
+{
+  "adresse":"11 Pen Ave",
+  "floors":5,
+  "offices":7,
+  "loc":{
+    "lat":40.693479,
+    "lon":-73.983854
+  }
+}
+
+PUT /employees/employee/330
+{
+  "name":"Richard Bell",
+  "title":"Senior Accountant",
+  "salar_usd":115000.00,
+  "hiredate":"Jan 19, 2013"
+}
+```
+
+Após a execução do script, visualize os índices existentes no seu Elasticsearch utilizando a API **_cat**:
 
 ```
 curl -XGET http://localhost:9200/_cat/indices?v
