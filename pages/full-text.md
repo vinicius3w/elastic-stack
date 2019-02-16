@@ -1,9 +1,11 @@
 ## Full-Text
 
+> Artigo há atualizado para a versão 6.0+ do Elasticsearch por __[Vinicius Garcia](https://github.com/vinicius3w)__
+
 Na pesquisa full-text você simplesmente pesquisa o que você quer sem passar nenhuma regra, agregação ou algo do tipo. Quando apresentarmos o Kibana, este tipo de pesquisa vai se apresentar de forma mais simples ainda, como uma pesquisa no Google. Vamos pesquisar as palavras "easy to use" no campo "tweet" do nosso index:
 
 ```
-curl -XGET http://localhost:9200/twitter/tweet/_search?pretty -d '
+curl -XGET http://localhost:9200/tweets/tweet/_search?pretty -H 'Content-Type: application/json' -d '
 {
   "query": {
     "match": {
@@ -30,7 +32,7 @@ Se você não fez nenhuma alteração no script [tweets.sh](/scripts/tweets.sh),
 "max_score" : 1.9187583,
 "hits" : [
   {
-    "_index" : "twitter",
+    "_index" : "tweets",
     "_type" : "tweet",
     "_id" : "6",
     "_score" : 1.9187583,
@@ -42,7 +44,7 @@ Se você não fez nenhuma alteração no script [tweets.sh](/scripts/tweets.sh),
     }
   },
   {
-    "_index" : "twitter",
+    "_index" : "tweets",
     "_type" : "tweet",
     "_id" : "11",
     "_score" : 0.84843254,
@@ -54,7 +56,7 @@ Se você não fez nenhuma alteração no script [tweets.sh](/scripts/tweets.sh),
     }
   },
   {
-    "_index" : "twitter",
+    "_index" : "tweets",
     "_type" : "tweet",
     "_id" : "3",
     "_score" : 0.17669111,
@@ -74,12 +76,12 @@ Talvez você não tenha reparado, mas você acabou de fazer uma pesquisa full te
 
 Bem, é ai que a graça (ou desgraça) do full text entra em ação. Repare que os três tweets retornados possuem a palavra "easy". Como a sua busca não possui nenhum filtro ou parametrização adicional, qualquer uma das três palavras "easy", "to" e "use" que compõe a sua busca, serão pesquisadas no index informado. Porém, no primeiro resultado (tweet do Tom Michael), vemos que o campo **"_score"** possui o número **"1.9187583"** como valor, correto ? Compare este número com o "\_score" dos outros resultados...
 
-O Elasticsearch verifica a relevância de um documento pela proximidade da busca realizada. Como o primeiro resultado é o que mais se aproxima da busca feita, por possuir as três palavras pesquisadas, este documento recebe um número de \_score mais alto do que os demais. É assim que o Elasticsearch mede a relevância de uma pesquisa feita com o resultado encontrado.
+O Elasticsearch verifica a relevância de um documento pela **proximidade** da busca realizada. Como o primeiro resultado é o que mais se aproxima da busca feita, por possuir as três palavras pesquisadas, este documento recebe um número de \_score mais alto do que os demais. É assim que o Elasticsearch mede a relevância de uma pesquisa feita com o resultado encontrado.
 
 Este é o tipo de pesquisa mais simples de se fazer e também, o mais suscetível a falhas, por acabar retornando resultados que podem não ser relevantes para a sua busca e por conta do campo **"_all"** que será explicado em breve. Agora, se quisermos pesquisar a sequência exata das palavras "easy to use", podemos utilizar o recurso "match_phrase" em nossa busca:
 
 ```
-curl -XGET http://localhost:9200/twitter/tweet/_search?pretty -d '
+curl -XGET http://localhost:9200/twitter/tweet/_search?pretty -H 'Content-Type: application/json' -d '
 {
   "query": {
     "match_phrase": {
@@ -150,4 +152,4 @@ Se o meu index só possuir apenas estes dois documentos, o retorno da nossa pesq
 
 Estamos entendidos com o full-text ?
 
-Próximo: [Estruturada](/pages/structured.md)
+Anterior: [Tipos e Formas de Pesquisa](/pages/types_forms.md) | Próximo: [Estruturada](/pages/structured.md)
