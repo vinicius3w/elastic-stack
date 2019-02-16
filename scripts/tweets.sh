@@ -1,5 +1,5 @@
 #!/bin/bash
-curl -XPOST http://localhost:9200/_bulk -d '
+curl -XPOST http://localhost:9200/_bulk -H 'Content-Type: application/json' -d '
 
 { "create": { "_index": "twitter", "_type": "user", "_id": "1" }}
 { "email" : "tom@smith.com", "name" : "Tom Michael", "username" : "@tom" }
