@@ -1,5 +1,5 @@
 #!/bin/bash
-curl -XPUT http://localhost:9200/mycompany/funcionarios/2 -d '
+curl -XPUT http://localhost:9200/mycompany/funcionarios/2 -H 'Content-Type: application/json' -d '
 {
   "nome": "Maria Costa",
   "idade": 34,
@@ -8,7 +8,7 @@ curl -XPUT http://localhost:9200/mycompany/funcionarios/2 -d '
   "interesses": ["esportes", "musica"]
 }'
 
-curl -XPUT http://localhost:9200/mycompany/funcionarios/3 -d '
+curl -XPUT http://localhost:9200/mycompany/funcionarios/3 -H 'Content-Type: application/json' -d '
 {
   "nome": "José Cardoso",
   "idade": 28,
@@ -18,7 +18,7 @@ curl -XPUT http://localhost:9200/mycompany/funcionarios/3 -d '
 }'
 
 
-curl -XPUT http://localhost:9200/mycompany/funcionarios/4 -d '
+curl -XPUT http://localhost:9200/mycompany/funcionarios/4 -H 'Content-Type: application/json' -d '
 {
   "nome": "Claudio Silva",
   "idade": 31,
