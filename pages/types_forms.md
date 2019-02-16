@@ -43,16 +43,39 @@ Primeiro, vamos ver como a query-string funciona. Vamos pesquisar todos os tweet
 curl -XGET http://localhost:9200/twitter/tweet/_search?q=name:Phill
 ```
 
+Ou, no caso da versão 6.0+:
+
+```
+curl -XGET http://localhost:9200/tweets/tweet/_search?q=name:Phill
+```
+
 Apesar de parecer bastante simples de se utilizar, esse formato é o menos utilizado. A medida que colocamos mais parâmetros e condições, a busca começa a aparecer mais complicada do que realmente é. Por exemplo, vamos pesquisar pelo nome "Tom" no campo "name" __e__ "lina" no campo "tweet":
 
 ```
 curl -XGET http://localhost:9200/twitter/tweet/_search?q=%2Bname%3Atom+%2Btweet%3Alina
 ```
 
+ou
+
+```
+curl -XGET http://localhost:9200/tweets/tweet/_search?q=%2Bname%3Atom+%2Btweet%3Alina
+```
+
 Perceba que mesmo sendo uma pesquisa relativamente simples, a string de pesquisa se tornou um pouco menos _legível_. Agora, vamos realizar a primeira pesquisa feita no index twitter anteriormente, utilizando a __query DSL__:
 
 ```
-curl -XGET http://localhost:9200/twitter/tweet/_search?pretty -d '
+curl -XGET http://localhost:9200/twitter/tweet/_search?pretty -H 'Content-Type: application/json' -d '
+{
+  "query": {
+    "match": { "name": "Phill" }
+  }
+}'
+```
+
+ou
+
+```
+curl -XGET http://localhost:9200/tweets/tweet/_search?pretty -H 'Content-Type: application/json' -d '
 {
   "query": {
     "match": { "name": "Phill" }
@@ -64,31 +87,31 @@ Neste formato, passamos um documento JSON como parâmetro de pesquisa. Antes de 
 
 ```
 {
-  "took" : 8,                 	# Tempo em milissegundos que a query demorou para retornar.
-  "timed_out" : false,        	# Houve Time Out na busca (True or False) ?
-  "_shards" : {               	# Falaremos sobre shards mais tarde...
-  "total" : 5,
-  "successful" : 5,
-  "failed" : 0
-},
+  "took" : 8,                 	  # Tempo em milissegundos que a query demorou para retornar.
+  "timed_out" : false,        	  # Houve Time Out na busca (True or False) ?
+  "_shards" : {               	  # Falaremos sobre shards mais tarde...
+    "total" : 5,
+    "successful" : 5,
+    "failed" : 0
+  },
   "hits" : {                
-  "total" : 1,                	# Quantidade de documentos que foram encontrados.
-  "max_score" : 0.25811607,   	# Falaremos sobre score mais tarde também...
-  "hits" : [                  	# Dentro deste array, possuímos todos os resultados encontrados.
-    {
-      "_index" : "twitter",   	# Qual o index do documento.
-      "_type" : "tweet",      	# Qual o type do documento.
-      "_id" : "14",           	# Qual o id do documento.
-      "_score" : 0.25811607,  	# Ó o score ai denovo...
-      "_source" : {           	# Todos os dados do documento encontrado:
-      "date" : "2018-09-23",
-      "name" : "Phill Matt",
-      "tweet" : "Just one is sufficient.",
-      "user_id" : 3
-    }
+    "total" : 1,                  # Quantidade de documentos que foram encontrados.
+    "max_score" : 0.25811607,   	# Falaremos sobre score mais tarde também...
+    "hits" : [                  	# Dentro deste array, possuímos todos os resultados encontrados.
+      {
+        "_index" : "twitter",   	# Qual o index do documento.
+        "_type" : "tweet",      	# Qual o type do documento.
+        "_id" : "14",           	# Qual o id do documento.
+        "_score" : 0.25811607,  	# Ó o score ai denovo...
+        "_source" : {           	# Todos os dados do documento encontrado:
+          "date" : "2018-09-23",
+          "name" : "Phill Matt",
+          "tweet" : "Just one is sufficient.",
+          "user_id" : 3
+        }
+      }
+    ]
   }
-]
-}
 }
 ```
 
