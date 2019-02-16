@@ -13,6 +13,19 @@ curl -XPUT http://localhost:9200/mycompany/funcionarios/1 -d '
 }'
 ```
 
+A partir da versão 6.0 foi introduzida a verificação estrita do tipo de conteúdo introduzida, conforme explicado neste [post](https://www.elastic.co/blog/strict-content-type-checking-for-elasticsearch-rest-requests). Desta forma o comando correto é:
+
+```
+curl -XPUT http://localhost:9200/mycompany/funcionarios/1 -H 'Content-Type: application/json' -d '
+{
+  "nome": "João Silva",
+  "idade": 19,
+  "endereco": "Avenida da Magia",
+  "hobbies": ["Tocar guitarra", "Acampar com a familia"],
+  "interesses": "musica"
+}'
+```
+
 Provavelmente você recebeu uma resposta parecida com esta:
 
 ```
