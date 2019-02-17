@@ -22,4 +22,4 @@ __Red__: Nem todos os shards estão ativos.
 
 Você deve estar pensando "E o que isso signficia se eu nem sei o que é um shard ?". Vamos tentar entender isto melhor agora...
 
-Próximo: [Shards e Replicas](/pages/shards_replicas.md)
+Anterior: [Atualizando](/pages/updating.md) | Próximo: [Shards e Replicas](/pages/shards_replicas.md)
