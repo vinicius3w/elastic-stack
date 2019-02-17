@@ -31,4 +31,4 @@ E se quisermos adicionar uma condição em nossa pesquisa ? É só utilizarmos o
 Resultados analíticos são melhor observados utilizando as views do Kibana e a nossa [primeira view](/pages/kibana.md) foi um ótimo exemplo disto. Sendo assim, vamos partir para a criação de nossos dashboards !
 
 
-Próximo: [Criando Views](/pages/views.md)
+Anterior: [Logstash](/pages/logstash.md) | Próximo: [Criando Views](/pages/views.md)
