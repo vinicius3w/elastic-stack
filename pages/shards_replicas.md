@@ -1,5 +1,7 @@
 ## Shards e Replicas
 
+> Artigo atualizado para a versão 6.0+ do Elasticsearch por __[Vinicius Garcia](https://github.com/vinicius3w)__
+
 Quando indexamos nossos documentos no Elasticsearch (lembre-se do significado de _indexar_ explicado anteriormente), estamos adicionando nossos dados em um __shard__, que são basicamente "containers" que armazenam os dados que indexamos no Elasticsearch. Porém, nossas aplicações não falam diretamente com o shard em si, mas sim com os índices. A realidade é que os índices, "mycompany" ou "twitter" por exemplo, são apenas _"caminhos lógicos"_ ou _"namespaces"_, que apontam para um ou mais __shards__. Ou seja, quando realizamos uma inserção de um documento em um index no Elasticsearch, passamos o caminho do index que queremos utilizar, e este, fará o armazenamento do documento em algum shard qualquer, de forma balanceada.
 
 Após o direcionamento para um shard, o Apache Lucene entra em ação. Dentro de cada shard há uma instância de Lucene em execução, utilizando o seu motor de busca e indexação para acessar/armazenar os nossos dados. Isso nos garante toda a inteligência e velocidade que esta biblioteca possui na busca de documentos.
@@ -44,7 +46,7 @@ __OBS:__ Veja que podemos apagar mais de um index em um só comando, separando-o
 O número de shards primários é fixado no momento da criação do index, enquanto a quantida de réplicas pode ser alterada a qualquer momento. Vamos criar um novo index chamado "market" e alterar a quantidade de shards primários que serão criados pelo Elasticsearch:
 
 ```
-curl -XPUT http://localhost:9200/market -d '
+curl -XPUT http://localhost:9200/market -H 'Content-Type: application/json' -d '
 {
   "settings" : {
     "index" : {
