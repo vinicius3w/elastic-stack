@@ -137,4 +137,4 @@ Caso haja uma falha em qualquer um dos nodes, temos a garantia de que qualquer o
 Existem diversas configurações que podem ser feitas e melhoradas em um ambiente produtivo real à respeito de cluster, shards e replicas, mas este não é o foco deste repositório. Mais informações à respeito de configurações, redundância e performance, são encontradas facilmente na documentação oficial da Elastic.
 
 
-Próximo: [Inverted Index](/pages/inverted_index.md)
+Anterior: [Node e Cluster](/pages/node_cluster.md) | Próximo: [Inverted Index](/pages/inverted_index.md)
