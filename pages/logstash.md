@@ -83,4 +83,4 @@ __OBS:__ O script está apontando para o endereço __localhost__, então caso es
 
 __OBS²:__ Executamos o script em background, pois o mesmo demora um pouquinho para finalizar sua execução. Caso queira aumentar a massa de dados, é só repetir a sua execução.
 
-Próximo: [Pesquisas no Kibana](/pages/kibana_searches.md)
+Anterior: [Kibana](/pages/kibana.md) | Próximo: [Pesquisas no Kibana](/pages/kibana_searches.md)
