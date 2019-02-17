@@ -34,4 +34,4 @@ Mexer no Kibana é muito simples e o gif é auto-explicativo... mas vamos mastig
 
 Para explorarmos o _Lucene Query Syntax_ e gerarmos gráficos mais interessantes, precisamos de uma massa de dados maior do que a que possuímos. Sendo assim, vamos gerar esta massa !
 
-[Logstash](/pages/logstash.md)
+Anterior: [Avançando na Stack](/pages/stack.md) | Posterior: [Logstash](/pages/logstash.md)
