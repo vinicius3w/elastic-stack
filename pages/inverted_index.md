@@ -64,4 +64,4 @@ Agora nossos documentos estão mais """"_encontráveis_"""", certo ? Esse proces
 
 O Elasticsearch fornece diversos "analisadores" que você pode utilizar na hora de padronizar seus documentos. Como este tópico é apenas explicativo, não iremos realizar nenhuma alteração em nossos dados. De qualquer forma, saiba que este é um ponto muito importante e que deve ser avaliado com atenção em um ambiente real. Para mais informações, segue o bom e velho link da documentação da [Elastic](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-analyzers.html).
 
-Próximo: [Avançando na Stack](/pages/stack.md)
+Anterior: [Shards e Replicas](/pages/shards_replicas.md) | Próximo: [Avançando na Stack](/pages/stack.md)
