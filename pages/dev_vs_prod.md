@@ -1,5 +1,7 @@
 ## Desenvolvimento vs Produção
 
+> Artigo atualizado para a versão 6.0+ do Elasticsearch por __[Vinicius Garcia](https://github.com/vinicius3w)__
+
 Até o momento, temos utilizado o Elasticsearch em modo de _desenvolvimento_. Este modo é assumido por padrão pela ferramenta, caso você não modifique o parâmetro `network.host` no arquivo principal _/config/elasticsearch.yml_. Ao configurarmos um endereço de IP para a nossa instância, o Elasticsearch passa a __exigir__ que algumas configurações adicionais sejam feitas no host em que o mesmo reside para o seu funcionamento, caso contrário será impossível até mesmo de iniciar a sua instância.
 
 Em um cenário ideal, o Elasticsearch deve ser executado sem nenhuma outra aplicação concorrente, em um servidor dedicado ao seu uso e deve ter acesso a todos os recursos computacionais disponíveis. Para isso, precisamos realizar algumas configurações no nosso sistema operacional para permitir que ele tenha mais acesso à estes recursos do que é disponibilizado por default.
@@ -68,7 +70,7 @@ hosts => ["<IP_DO_SEU_HOST>:9200"]
 Feito isso, inicie sua instância de Elasticsearch e acompanhe a saída do arquivo _nohup.out_ para ver se nenhuma mensagem de erro será exibida. Após a subida com sucesso da sua instância, a mesma agora poderá ser acessada através do IP configurado anteriormente:
 
 ```
-curl -XGET http://<IP_DO_SEU_HOST>:9200
+curl -XGET http://<IP_DO_SEU_HOST>:9200 -H 'Content-Type: application/json' 
 {
   "name" : "EuubzCb",
   "cluster_name" : "elasticsearch",
@@ -86,4 +88,4 @@ curl -XGET http://<IP_DO_SEU_HOST>:9200
 
 Legal, agora temos uma instância produtiva em total funcionamento. Estes passos são essenciais para uma configuração onde o seu node de Elasticsearch precisa ser acessado por algum host remoto e é exatamente sobre isso que iremos falar agora...
 
-Próximo: [Beats](/pages/beats.md)
+Anterior: [Nosso primeiro Dashboard](/pages/dashboard.md) | Próximo: [Beats](/pages/beats.md)
