@@ -105,4 +105,4 @@ Para cada servidor que desejarmos monitorar, simplesmente repetimos os passos de
 
 Para mais informações à respeito de configuração e parametrização, acesse este __[link](https://www.elastic.co/guide/en/beats/filebeat/current/configuring-howto-filebeat.html)__ e veja as opções disponíveis que temos para configurarmos o nosso Filebeat.
 
-[Monitorando Containers](/pages/containers.md)
+Anterior: [Desenvolvimento vs Produção](/pages/dev_vs_prod.md) | Posterior: [Monitorando Containers](/pages/containers.md)
