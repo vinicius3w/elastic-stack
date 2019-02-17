@@ -89,4 +89,4 @@ docker stop 1b6ec41f9add
 
 Simples demais não é verdade ?
 
-Próximo: [Conclusão](/pages/conclusion.md)
+Anterior: [Beats](/pages/beats.md) | Próximo: [Conclusão](/pages/conclusion.md)
