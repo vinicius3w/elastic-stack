@@ -29,4 +29,4 @@ Bar View:
 
 Finalizada a criação das views, vamos criar o nosso primeiro dashboard !
 
-Próximo: [Nosso primeiro Dashboard](/pages/dashboard.md)
+Anterior: [Pesquisas no Kibana](/pages/kibana_searches.md) | Próximo: [Nosso primeiro Dashboard](/pages/dashboard.md)
