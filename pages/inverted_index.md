@@ -1,6 +1,6 @@
 ## Inverted Index
 
-Nosso último ponto antes de partirmos para as outras ferramentas da stack será totalmente teórico e irá abordar sobre _uma das_ funcionalidades que tornam o Elasticsearch extremamente rápido na hora de fazer suas pesquisas, o __inveterd index__.
+Nosso último ponto antes de partirmos para as outras ferramentas da stack será totalmente teórico e irá abordar sobre _uma das_ funcionalidades que tornam o Elasticsearch extremamente rápido na hora de fazer suas pesquisas, o __inverted index__.
 
 O inverted index ou índice invertido (_high level fluent traduction_), é uma estrutura que consiste em uma lista de todas as únicas palavras que aparecem em qualquer documento, e para cada palavra, uma lista de documentos em que ela aparece. Para facilitar o entendimento, vamos supor que possuímos dois documentos, cada um com um campo chamado __"informacao"__, contendo os seguintes valores:
 
